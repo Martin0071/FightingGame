@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BattleTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     @DisplayName("Fight")
     void firstFight() {
         Warrior carl = new Warrior();
