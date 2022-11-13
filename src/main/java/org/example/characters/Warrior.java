@@ -14,6 +14,13 @@ public class Warrior {
     public  boolean isAlive(){
         return health > 0;
     }
+    public void hit(Warrior opponent){
+    opponent.receiveDamage(getAttack());
+    }
+
+    public void receiveDamage(int attack) {
+        setHealth(getHealth()-attack);
+    }
 
     public int getHealth() {
         return health;
@@ -37,6 +44,4 @@ public class Warrior {
                 ", attack=" + attack +
                 '}';
     }
-
-
 }

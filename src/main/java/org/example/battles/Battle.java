@@ -1,5 +1,6 @@
 package org.example.battles;
 
+import org.example.armies.Army;
 import org.example.characters.Warrior;
 
 public class Battle {
@@ -13,17 +14,32 @@ public class Battle {
      */
     public static boolean fight(Warrior warrior1, Warrior warrior2){
         while(warrior1.isAlive() && warrior2.isAlive()){
-            warrior2.setHealth(warrior2.getHealth() - warrior1.getAttack());
-            if(warrior2.isAlive()){
-                warrior1.setHealth(warrior1.getHealth()- warrior2.getAttack());
-            }
+           warrior1.hit(warrior2);
+           if(warrior2.isAlive()){
+               warrior2.hit(warrior1);
+           }
         }
         return warrior1.isAlive();
     }
-    /*TODO:
-        Create class army with addUnits method
-       Overload method fight for armies
-
-
-     */
+    public static boolean fight(Army army1, Army army2){
+                while(army1.getTroops().size()>0&&army2.getTroops().size()>0) {
+                            army1.getTroops().get(0).hit(army2.getTroops().get(0));
+                    if(!army1.getTroops().get(0).isAlive()) {
+                            army1.getTroops().remove(0);
+                            if(army1.getTroops().size()<=0){
+                                break;
+                            }
+                        }
+                    if(army2.getTroops().get(0).isAlive()){
+                        army2.getTroops().get(0).hit(army1.getTroops().get(0));
+                    }
+                    else{
+                        army2.getTroops().remove(0);
+                        if(army2.getTroops().size()<=0){
+                            break;
+                        }
+                    }
+                }
+        return army1.getTroops().size()>0;
+    }
 }
