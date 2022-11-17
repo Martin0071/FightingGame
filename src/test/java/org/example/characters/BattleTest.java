@@ -5,6 +5,7 @@ import org.example.battles.Battle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -71,6 +72,23 @@ class BattleTest {
         assertFalse(Battle.fight(jim, unit_3));
     }
     @Test
+    @DisplayName("Fight 8")
+    void defenderHealthCheck(){
+        var unit1=new Defender();
+        var unit2= new Rookie();
+        Battle.fight(unit1,unit2);
+        assertEquals(60, unit1.getHealth());
+    }
+    @Test
+    @DisplayName("Fight 9")
+    void rookieVsDefender(){
+        var unit1=new Defender();
+        var unit2= new Rookie();
+        var unit3=new Warrior();
+        Battle.fight(unit1,unit2);
+        assertTrue(Battle.fight(unit1,unit3));
+    }
+    @Test
     void armyTest(){
         //setup
         var myArmy = new Army();
@@ -78,7 +96,7 @@ class BattleTest {
 
         var enemyArmy = new Army();
         enemyArmy.addUnits(Warrior::new, 3);
-        assert Battle.fight(myArmy, enemyArmy);
+        assertTrue(Battle.fight(myArmy, enemyArmy));
 
     }
     @Test
@@ -89,7 +107,7 @@ class BattleTest {
 
         var army4 = new Army();
         army4.addUnits(Warrior::new, 5);
-        assert !Battle.fight(army3, army4);
+        assertFalse(Battle.fight(army3, army4));
     }
     @Test
     void battleOne(){
@@ -148,6 +166,52 @@ class BattleTest {
         army2.addUnits(Warrior::new,2);
         army2.addUnits(Knight::new,1);
         assertTrue(Battle.fight(army1,army2));
+    }
+    @Test
+    void testFight(){
+        var warrior = new Warrior();
+        var defender = new Defender();
+        assertFalse(Battle.fight(warrior,defender));
+    }
+    @Test
+    void battle7(){
+        var army1 = new Army();
+        var army2 = new Army();
+        army1.addUnits(Warrior::new,5);
+        army1.addUnits(Defender::new,4);
+        army1.addUnits(Defender::new,5);
+        army2.addUnits(Warrior::new,4);
+        assertTrue(Battle.fight(army1,army2));
+    }
+    @Test
+    void battle8(){
+        var army1 = new Army();
+        var army2 = new Army();
+        army1.addUnits(Defender::new,5);
+        army1.addUnits(Warrior::new,20);
+        army2.addUnits(Warrior::new,21);
+        army1.addUnits(Defender::new,4);
+        assertTrue(Battle.fight(army1,army2));
+    }
+    @Test
+    void battle9(){
+        var army1 = new Army();
+        var army2 = new Army();
+        army1.addUnits(Warrior::new,10);
+        army1.addUnits(Defender::new,5);
+        army2.addUnits(Warrior::new,5);
+        army1.addUnits(Defender::new,10);
+        assertTrue(Battle.fight(army1,army2));
+    }
+    @Test
+    void battle10(){
+            var army1 = new Army();
+            var army2 = new Army();
+            army1.addUnits(Defender::new,2);
+            army1.addUnits(Warrior::new,1);
+            army1.addUnits(Defender::new,1);
+            army2.addUnits(Warrior::new,5);
+            assertFalse(Battle.fight(army1,army2));
     }
 
 }

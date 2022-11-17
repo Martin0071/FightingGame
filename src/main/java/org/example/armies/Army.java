@@ -1,13 +1,8 @@
 package org.example.armies;
 
-import org.example.characters.Knight;
 import org.example.characters.Warrior;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -25,6 +20,12 @@ public class Army {
         for (int i = 0; i < numberOfFighters; i++) {
             troops.add(factory.get());
         }
+    }
+    public Warrior getFirstFromArmy(){
+       return getTroops().get(0);
+    }
+    public boolean armyIsEmpty(){
+        return getTroops().isEmpty();
     }
 
 

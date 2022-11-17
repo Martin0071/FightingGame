@@ -31,22 +31,20 @@ public class Battle {
      * @param army2 Army object
      * @return Is the first army alive
      */
-    public static boolean fight(Army army1, Army army2){
-                while(army1.getTroops().size()>0&&army2.getTroops().size()>0) {
-                    if(army1.getTroops().get(0).isAlive()) {
-                        army1.getTroops().get(0).hit(army2.getTroops().get(0));
-                    }
-                    else {
-                            army1.getTroops().remove(0);
-                            continue;
-                        }
-                    if(army2.getTroops().get(0).isAlive()){
-                        army2.getTroops().get(0).hit(army1.getTroops().get(0));
-                    }
-                    else{
-                        army2.getTroops().remove(0);
-                    }
-                }
-        return army1.getTroops().size()>0;
+    public static boolean fight(Army army1, Army army2) {
+        while (!army1.armyIsEmpty() && !army2.armyIsEmpty()) {
+            if (army1.getFirstFromArmy().isAlive()) {
+                fight(army1.getFirstFromArmy(),army2.getFirstFromArmy());
+            } else {
+                army1.getTroops().remove(army1.getFirstFromArmy());
+                continue;
+            }
+            if (army2.getFirstFromArmy().isAlive()) {
+                fight(army2.getFirstFromArmy(),army1.getFirstFromArmy());
+            } else {
+                army2.getTroops().remove(army2.getFirstFromArmy());
+            }
+        }
+        return !army1.getTroops().isEmpty();
     }
 }

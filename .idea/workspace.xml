@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="828c82d5-6075-414e-ad38-7016cff6b41e" name="Changes" comment="InitialCommit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Defender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Rookie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Vampire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/armies/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/armies/Army.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/armies/Army.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/armies/Army.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/battles/Battle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/battles/Battle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/characters/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/characters/Warrior.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/characters/BattleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/characters/BattleTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +43,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/marti/Documents/GitHub/FightingGame",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Downloads/sonarlint-intellij-7.1.1.54565.zip&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -70,7 +79,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.battleFive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.battle10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FightingGame" />
       <extension name="coverage">
         <pattern>
@@ -80,13 +89,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.characters" />
       <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
-      <option name="METHOD_NAME" value="battleFive" />
+      <option name="METHOD_NAME" value="battle10" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.battleFour" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.defenderHealthCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FightingGame" />
       <extension name="coverage">
         <pattern>
@@ -96,23 +105,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.characters" />
       <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
-      <option name="METHOD_NAME" value="battleFour" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BattleTest.battleTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FightingGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.characters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.characters" />
-      <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
-      <option name="METHOD_NAME" value="battleTwo" />
+      <option name="METHOD_NAME" value="defenderHealthCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,13 +127,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BattleTest.rookieVsDefender" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FightingGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.characters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.characters" />
+      <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
+      <option name="METHOD_NAME" value="rookieVsDefender" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BattleTest (1)" />
         <item itemvalue="JUnit.BattleTest.demoBattle" />
-        <item itemvalue="JUnit.BattleTest.battleFive" />
-        <item itemvalue="JUnit.BattleTest.battleTwo" />
-        <item itemvalue="JUnit.BattleTest.battleFour" />
+        <item itemvalue="JUnit.BattleTest.battle10" />
+        <item itemvalue="JUnit.BattleTest.defenderHealthCheck" />
+        <item itemvalue="JUnit.BattleTest.rookieVsDefender" />
       </list>
     </recent_temporary>
   </component>
@@ -191,26 +200,8 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java</url>
-          <line>33</line>
-          <properties class="org.example.battles.Battle" method="fight">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>102</line>
-          <properties class="org.example.characters.BattleTest" method="battleTwo">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>126</line>
+          <line>144</line>
           <properties class="org.example.characters.BattleTest" method="battleFive">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -219,12 +210,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>142</line>
+          <line>160</line>
           <properties class="org.example.characters.BattleTest" method="demoBattle">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
+          <line>170</line>
+          <properties class="org.example.characters.BattleTest" method="testFight">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java</url>
+          <line>16</line>
+          <properties class="org.example.battles.Battle" method="fight">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java</url>
+          <line>33</line>
+          <properties class="org.example.battles.Battle" method="fight">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
