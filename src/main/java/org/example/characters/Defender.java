@@ -1,20 +1,21 @@
 package org.example.characters;
 
-public class Defender extends Warrior{
+public class Defender extends Warrior {
     private static final int DEFENSE = 2;
 
-    public Defender(){
-        super(60,3);
+    public Defender() {
+        super(60, 3);
     }
 
     @Override
     public void receiveDamage(int attack) {
-        int receivedDamage = attack-getDefense();
-        if(receivedDamage<=0){
-            receivedDamage=0;
+        int receivedDamage = attack - getDefense();
+        if (receivedDamage <= 0) {
+            receivedDamage = 0;
         }
         super.receiveDamage(receivedDamage);
     }
+
     public int getDefense() {
         return DEFENSE;
     }

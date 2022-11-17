@@ -3,7 +3,9 @@ package org.example.armies;
 import org.example.characters.Warrior;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Supplier;
 
 public class Army {
@@ -21,10 +23,8 @@ public class Army {
             troops.add(factory.get());
         }
     }
-    public Warrior getFirstFromArmy(){
-       return getTroops().get(0);
-    }
-    public boolean armyIsEmpty(){
+
+    public boolean armyIsEmpty() {
         return getTroops().isEmpty();
     }
 
@@ -33,4 +33,34 @@ public class Army {
         return troops;
     }
 
+    public Iterator<Warrior> firstAliveIterator() {
+        return new FirAliveIterator();
+    }
+
+    class FirAliveIterator implements Iterator<Warrior> {
+        Iterator<Warrior> iterator = troops.iterator();
+        Warrior champion;
+
+        @Override
+        public boolean hasNext() {
+            if (champion == null || !champion.isAlive()) {
+                if (iterator.hasNext()) {
+                    champion = iterator.next();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        @Override
+        public Warrior next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            } else {
+                return champion;
+            }
+        }
+    }
 }
