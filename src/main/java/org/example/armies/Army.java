@@ -43,15 +43,14 @@ public class Army {
 
         @Override
         public boolean hasNext() {
-            if (champion == null || !champion.isAlive()) {
-                if (iterator.hasNext()) {
-                    champion = iterator.next();
-                    return true;
-                } else {
-                    return false;
-                }
+            if (champion != null && champion.isAlive()) {
+                return true;
             }
-            return true;
+            while (iterator.hasNext()) {
+                champion = iterator.next();
+                return true;
+            }
+            return false;
         }
 
         @Override
