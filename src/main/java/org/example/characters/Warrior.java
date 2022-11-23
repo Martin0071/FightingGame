@@ -1,6 +1,6 @@
 package org.example.characters;
 
-public class Warrior {
+public class Warrior implements IWarrior {
     private int health;
     private final int attack;
 
@@ -12,27 +12,18 @@ public class Warrior {
         this.health = health;
         this.attack = attack;
     }
-
-    public boolean isAlive() {
-        return health > 0;
-    }
-
-    public void hit(Warrior opponent) {
-        opponent.receiveDamage(getAttack());
-    }
-    public void hit(Warrior opponent, Warrior opponent1) {
-        opponent.receiveDamage(getAttack());
-        opponent1.receiveDamage(getAttack());
-    }
     public void receiveDamage(int attack) {
         setHealth(getHealth() - attack);
     }
 
+    @Override
+    public void heal(int healAmount) {
+        setHealth(getHealth()+healAmount);
+    }
+
+
     public int getHealth() {
         return health;
-    }
-    public void receiveHealing(int healAmount){
-        setHealth(getHealth()+healAmount);
     }
 
     private void setHealth(int health) {

@@ -31,6 +31,18 @@ class BattleTest {
         army1 = new Army();
         army2 = new Army();
     }
+    /*interface Warrior{
+
+    }
+    interface Defender{
+
+    }
+    interface Vampire extends Warrior,Defender{
+
+    }
+    class WarriorImp implements Warrior{
+
+    }*/
 
     @Test
     void firstFight() {
@@ -308,11 +320,27 @@ class BattleTest {
     }
     @Test
     void battle17() {
-        var armyWarrior = new Army();
-        var armyLancer = new Army();
-        armyWarrior.addUnits(Warrior::new,2);
-        armyLancer.addUnits(Lancer::new,1);
-        armyLancer.addUnits(Warrior::new,1);
-        assertFalse(Battle.fight(armyWarrior, armyLancer));
+        army1.addUnits(Warrior::new,2);
+        army2.addUnits(Lancer::new,1);
+        army2.addUnits(Warrior::new,1);
+        assertFalse(Battle.fight(army1, army2));
+    }
+    @Test
+    void customBattle(){
+        army1.addUnits(Lancer::new, 1);
+        army2.addUnits(Rookie::new,2);
+        assertTrue(Battle.fight(army1,army2));
+    }
+    @Test
+    void customBattle2(){
+        army1.addUnits(Rookie::new,2);
+        army2.addUnits(Lancer::new,1);
+        assertFalse(Battle.fight(army1,army2));
+    }
+    @Test
+    void battleBetweenLancerAndWarrior(){
+        Lancer lancer = new Lancer();
+        Warrior warrior = new Warrior();
+        assertTrue(Battle.fight(lancer,warrior));
     }
 }

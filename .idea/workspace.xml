@@ -5,17 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="828c82d5-6075-414e-ad38-7016cff6b41e" name="Changes" comment="InitialCommit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Healer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/IWarrior.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/CanProcessCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/072f99cfe65555a74983b88009b5ae9350472b9d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/17d4bd645d3c26b3fe9e286dfd722a036bfdd60c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e4302ea2dac047e5deaae5cc99e62f03ad61d89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37fd0e41ca5795bc34ecca6ab8f05daffbaf1f0d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3f5e2449f88ed436f60a17f840856e091f08503c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4322239925301375ac4bafe5a2f2c28e25ab9ac7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f7a0aeb9aa37f5a9ca505d77c597a4d7f7c7545" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a8a7abbec7736e74ea3783d680ac4ac2f754d195" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f13237f16f79c1ce6fefc0a00e1bf08936745776" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/armies/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/armies/Army.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Rookie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Rookie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Vampire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/armies/Army$FirAliveIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/armies/Army$FirAliveIterator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/armies/Army.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/armies/Army.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/battles/Battle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/battles/Battle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/characters/Defender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/characters/Defender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/characters/Lancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/characters/Lancer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/characters/Rookie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/characters/Rookie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/characters/Vampire.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/characters/Vampire.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/characters/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/characters/Warrior.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/characters/BattleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/characters/BattleTest.class" afterDir="false" />
@@ -30,6 +45,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -65,7 +81,20 @@
       <recent name="org.example.characters" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BattleTest.battle17">
+  <component name="RunManager" selected="JUnit.BattleTest (1)">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Test" />
+      <module name="FightingGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BattleTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FightingGame" />
       <extension name="coverage">
@@ -81,38 +110,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.battle15" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FightingGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.characters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.characters" />
-      <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
-      <option name="METHOD_NAME" value="battle15" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BattleTest.battle16" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FightingGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.characters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.characters" />
-      <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
-      <option name="METHOD_NAME" value="battle16" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BattleTest.battle17" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FightingGame" />
       <extension name="coverage">
@@ -124,6 +121,22 @@
       <option name="PACKAGE_NAME" value="org.example.characters" />
       <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
       <option name="METHOD_NAME" value="battle17" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleTest.battleBetweenSingleArmy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FightingGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.characters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.characters" />
+      <option name="MAIN_CLASS_NAME" value="org.example.characters.BattleTest" />
+      <option name="METHOD_NAME" value="battleBetweenSingleArmy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BattleTest.battle17" />
-        <item itemvalue="JUnit.BattleTest.battle16" />
-        <item itemvalue="JUnit.BattleTest.smokeTest" />
         <item itemvalue="JUnit.BattleTest (1)" />
-        <item itemvalue="JUnit.BattleTest.battle15" />
+        <item itemvalue="JUnit.BattleTest.smokeTest" />
+        <item itemvalue="JUnit.BattleTest.battle17" />
+        <item itemvalue="JUnit.BattleTest.battleBetweenSingleArmy" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +207,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java</url>
-          <line>5</line>
+          <line>6</line>
           <properties class="org.example.characters.Battle">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -203,7 +216,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>155</line>
+          <line>167</line>
           <properties class="org.example.characters.BattleTest" method="battleFive">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -212,7 +225,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>169</line>
+          <line>181</line>
           <properties class="org.example.characters.BattleTest" method="demoBattle">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -221,7 +234,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>178</line>
+          <line>190</line>
           <properties class="org.example.characters.BattleTest" method="defenderVsVampire">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -230,7 +243,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java</url>
-          <line>17</line>
+          <line>18</line>
           <properties class="org.example.battles.Battle" method="fight">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -239,7 +252,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java</url>
-          <line>43</line>
+          <line>52</line>
           <properties class="org.example.battles.Battle" method="fight">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -248,7 +261,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>185</line>
+          <line>197</line>
           <properties class="org.example.characters.BattleTest" method="battle7">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -257,7 +270,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/armies/Army.java</url>
-          <line>44</line>
+          <line>103</line>
           <properties class="org.example.armies.Army.FirAliveIterator" method="hasNext">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -266,7 +279,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/armies/Army.java</url>
-          <line>56</line>
+          <line>117</line>
           <properties class="org.example.armies.Army.FirAliveIterator" method="next">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -275,7 +288,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/characters/Vampire.java</url>
-          <line>26</line>
+          <line>13</line>
           <properties class="org.example.characters.Vampire" method="hit">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -284,7 +297,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
-          <line>276</line>
+          <line>288</line>
           <properties class="org.example.characters.BattleTest" method="smokeTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -293,12 +306,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java</url>
-          <line>14</line>
+          <line>24</line>
           <properties class="org.example.characters.Lancer" method="hit">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
+          <line>328</line>
+          <properties class="org.example.characters.BattleTest" method="customBattle">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
+          <line>340</line>
+          <properties class="org.example.characters.BattleTest" method="battleBetweenLancerAndWarrior">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/characters/BattleTest.java</url>
+          <line>321</line>
+          <properties class="org.example.characters.BattleTest" method="battle17">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/armies/Army.java</url>
+          <line>18</line>
+          <properties class="org.example.armies.Army.WarriorInArmy" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
