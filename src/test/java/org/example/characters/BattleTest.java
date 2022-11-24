@@ -287,7 +287,7 @@ class BattleTest {
     }
     @Test
     void smokeTest() {
-       /* army1.addUnits(Lancer::new, 5);
+        army1.addUnits(Lancer::new, 5);
         army1.addUnits(Vampire::new, 3);
         army1.addUnits(Warrior::new, 4);
         army1.addUnits(Defender::new, 2);
@@ -295,10 +295,7 @@ class BattleTest {
         army2.addUnits(Defender::new, 4);
         army2.addUnits(Vampire::new, 6);
         army2.addUnits(Lancer::new,5);
-        assertFalse(Battle.straightFight(army1, army2));*/
-        army1.addUnits(Warrior::new,2);
-        army2.addUnits(Rookie::new,2);
-        assertTrue(Battle.straightFight(army1,army2));
+        assertFalse(Battle.straightFight(army1, army2));
     }
     @Test
     void battle15() {
