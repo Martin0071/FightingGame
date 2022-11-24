@@ -26,24 +26,6 @@ public class Battle {
         return warrior1.isAlive();
     }
     /**
-     * Fight between a Warrior and a Knight.
-     *
-     * @param warrior1 Warrior object
-     * @param warrior2 Warrior object
-     * @param warrior3 Warrior object
-     * @return Is the Warrior 1 alive
-     */
-    /*public static boolean fight(Warrior warrior1, Warrior warrior2, Warrior warrior3) {
-        while (warrior1.isAlive() && warrior2.isAlive()) {
-           warrior1.hit(warrior2,warrior3);
-            if (warrior2.isAlive()) {
-                warrior2.hit(warrior1);
-            }
-        }
-        return warrior1.isAlive();
-    }*/
-
-    /**
      * Fight between two armies.
      *
      * @param army1 Army object
@@ -55,6 +37,14 @@ public class Battle {
         var secondArmyIterator = army2.firstAliveIterator();
         while (firstArmyIterator.hasNext() && secondArmyIterator.hasNext()) {
                 fight(firstArmyIterator.next(), secondArmyIterator.next());
+        }
+        return firstArmyIterator.hasNext();
+    }
+    public static boolean straightFight(Army army1, Army army2){
+        var firstArmyIterator = army1.aliveIterator();
+        var secondArmyIterator = army2.aliveIterator();
+        while (firstArmyIterator.hasNext() && secondArmyIterator.hasNext()) {
+            fight(firstArmyIterator.next(), secondArmyIterator.next());
         }
         return firstArmyIterator.hasNext();
     }
