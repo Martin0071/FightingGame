@@ -1,10 +1,17 @@
 package org.example.characters;
 
+import org.example.armies.Army;
 import org.example.services.CanProcessCommand;
 import org.example.services.ChampionHitCommand;
 import org.example.services.Command;
 
 public class Healer extends Warrior implements IWarrior, CanProcessCommand {
+    private static final int HEALING_POWER = 2;
+
+    public static int getHealingPower() {
+        return HEALING_POWER;
+    }
+
     public Healer() {
         super(60, 0);
     }
@@ -14,11 +21,14 @@ public class Healer extends Warrior implements IWarrior, CanProcessCommand {
         //DO NOTHING
     }
 
-   public void heal(IWarrior patient){
+    public void heal(IWarrior patient) {
+            if(patient instanceof Army.WarriorInArmy){
+                Warrior unwrappedWarrior = ((Army.WarriorInArmy) patient).unwrapped();
+                unwrappedWarrior.heal(getHealingPower());
 
-       patient.heal(2);
+            }
 
-   }
+    }
 
     @Override
     public void processCommand(Command command, IWarrior sender) {

@@ -1,4 +1,5 @@
 package org.example.battles;
+import jdk.jshell.spi.ExecutionControl;
 import org.example.armies.Army;
 import org.example.characters.IWarrior;
 import org.example.characters.Lancer;
@@ -38,11 +39,9 @@ public class Battle {
         return firstArmyIterator.hasNext();
     }
     public static boolean straightFight(Army army1, Army army2){
-        var firstArmyIterator = army1.aliveIterator();
-        var secondArmyIterator = army2.aliveIterator();
-        while (firstArmyIterator.hasNext() && secondArmyIterator.hasNext()) {
-            fight(firstArmyIterator.next(), secondArmyIterator.next());
-        }
-        return firstArmyIterator.hasNext();
+        //TODO
+        //Implement iterator for getting aliveWarriors
+        //Implement logic for straightFight
+        return false;
     }
 }

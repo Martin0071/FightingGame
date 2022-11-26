@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 public class Army {
     private WarriorInArmy tail;
-    static class WarriorInArmy implements IWarrior, Lancer.HasWarriorBehind, CanProcessCommand {
+   public static class WarriorInArmy implements IWarrior, Lancer.HasWarriorBehind, CanProcessCommand {
         IWarrior warrior;
         WarriorInArmy nextWarrior;
         public WarriorInArmy(IWarrior warrior) {
@@ -37,6 +37,9 @@ public class Army {
                 nextWarrior.processCommand(command, this);
             }
         }
+       public Warrior unwrapped() {
+           return (Warrior) warrior;
+       }
 
         @Override
         public int getAttack() {
@@ -55,7 +58,6 @@ public class Army {
 
         @Override
         public void heal(int healAmount) {
-            warrior.heal(2);
         }
 
         @Override
