@@ -224,7 +224,6 @@ class BattleTest {
 
     @Test
     void battle10() {
-
         army1.addUnits(Defender::new, 2);
         army1.addUnits(Warrior::new, 1);
         army1.addUnits(Defender::new, 1);
@@ -323,15 +322,25 @@ class BattleTest {
     }
     @Test
     void battle17() {
-        army1.addUnits(Warrior::new,2);
-        army2.addUnits(Lancer::new,1);
-        army2.addUnits(Warrior::new,1);
-        assertFalse(Battle.fight(army1, army2));
+        army1.addUnits(Lancer::new, 7);
+        army1.addUnits(Vampire::new, 3);
+        army1.addUnits(Healer::new, 1);
+        army1.addUnits(Warrior::new, 4);
+        army1.addUnits(Healer::new, 1);
+        army1.addUnits(Defender::new, 2);
+        army2.addUnits(Warrior::new, 4);
+        army2.addUnits(Defender::new, 4);
+        army2.addUnits(Healer::new, 1);
+        army2.addUnits(Vampire::new, 6);
+        army2.addUnits(Lancer::new,4);
+        assertTrue(Battle.fight(army1, army2));
     }
     @Test
     void customBattle(){
         army1.addUnits(Lancer::new, 1);
-        army2.addUnits(Rookie::new,2);
+        army1.addUnits(Healer::new,1);
+        army2.addUnits(Warrior::new,2);
+        army2.addUnits(Healer::new,1);
         assertTrue(Battle.fight(army1,army2));
     }
     @Test

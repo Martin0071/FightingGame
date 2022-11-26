@@ -1,5 +1,6 @@
 package org.example.armies;
 
+import org.example.characters.Warrior;
 import org.example.services.ChampionHitCommand;
 import org.example.characters.IWarrior;
 import org.example.characters.Lancer;
@@ -17,7 +18,6 @@ public class Army {
     static class WarriorInArmy implements IWarrior, Lancer.HasWarriorBehind, CanProcessCommand {
         IWarrior warrior;
         WarriorInArmy nextWarrior;
-
         public WarriorInArmy(IWarrior warrior) {
             this.warrior = warrior;
         }
@@ -55,7 +55,7 @@ public class Army {
 
         @Override
         public void heal(int healAmount) {
-
+            warrior.heal(2);
         }
 
         @Override

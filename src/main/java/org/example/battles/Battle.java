@@ -1,12 +1,9 @@
 package org.example.battles;
-
 import org.example.armies.Army;
 import org.example.characters.IWarrior;
 import org.example.characters.Lancer;
 import org.example.characters.Warrior;
-
 public class Battle {
-
     /**
      * Fight between a Warrior and a Knight.
      *

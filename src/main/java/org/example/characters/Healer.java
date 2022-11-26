@@ -11,13 +11,14 @@ public class Healer extends Warrior implements IWarrior, CanProcessCommand {
 
     @Override
     public void hit(IWarrior opponent) {
+        //DO NOTHING
     }
 
-    public void heal(IWarrior patient) {
-     if(patient instanceof Warrior p){
-         p.heal(2);
-     }
-    }
+   public void heal(IWarrior patient){
+
+       patient.heal(2);
+
+   }
 
     @Override
     public void processCommand(Command command, IWarrior sender) {

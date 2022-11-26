@@ -3,13 +3,14 @@ package org.example.characters;
 public class Warrior implements IWarrior {
     private int health;
     private final int attack;
+    int initialHealth;
 
     public Warrior() {
         this(50, 5);
     }
-
     protected Warrior(int health, int attack) {
         this.health = health;
+        initialHealth=health;
         this.attack = attack;
     }
     public void receiveDamage(int attack) {
@@ -18,7 +19,12 @@ public class Warrior implements IWarrior {
 
     @Override
     public void heal(int healAmount) {
-        setHealth(getHealth()+healAmount);
+        if(getHealth()<initialHealth){
+            setHealth(getHealth()+healAmount);
+            if(getHealth()>initialHealth){
+                setHealth(initialHealth);
+            }
+        }
     }
 
 

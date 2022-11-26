@@ -1,7 +1,6 @@
 package org.example.characters;
 
-import org.example.services.CanProcessCommand;
-import org.example.services.Command;
+
 
 public interface IWarrior {
    default void hit(IWarrior opponent){
