@@ -27,7 +27,6 @@ public class Warrior implements IWarrior {
         }
     }
 
-
     public int getHealth() {
         return health;
     }

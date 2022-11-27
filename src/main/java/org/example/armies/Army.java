@@ -13,9 +13,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Supplier;
 
-public class Army {
+public class Army implements Iterable<IWarrior>{
     private WarriorInArmy tail;
-   public static class WarriorInArmy implements IWarrior, Lancer.HasWarriorBehind, CanProcessCommand {
+
+    public static class WarriorInArmy implements IWarrior, Lancer.HasWarriorBehind, CanProcessCommand {
         IWarrior warrior;
         WarriorInArmy nextWarrior;
         public WarriorInArmy(IWarrior warrior) {
@@ -73,7 +74,6 @@ public class Army {
     public Army() {
     }
 
-
     protected Army(List<IWarrior> troops) {
         this.troops = troops;
     }
@@ -89,50 +89,39 @@ public class Army {
             troops.add(wrapped);
         }
     }
-
-    public boolean armyIsEmpty() {
-        return getTroops().isEmpty();
-    }
-
-
     public List<IWarrior> getTroops() {
         return troops;
     }
-    public Iterator<IWarrior> firstAliveIterator() {
-        return new FirAliveIterator();
-    }
 
-    public Iterator<IWarrior> aliveIterator() {
-        return new AliveIterator();
+    @Override
+    public Iterator<IWarrior> iterator() {
+        return new ArmyIterator();
     }
-    class AliveIterator implements Iterator<IWarrior>{
+    class ArmyIterator implements Iterator<IWarrior> {
         Iterator<IWarrior> iterator = troops.iterator();
-        IWarrior champion;
+        IWarrior nextAlive;
         @Override
         public boolean hasNext() {
-            if (champion != null && champion.isAlive()) {
-                return true;
-            }
-            while (iterator.hasNext()) {
-                champion = iterator.next();
-                if (champion.isAlive()) {
-                    return true;
-                }
-            }
-            return false;
+           return iterator.hasNext();
         }
 
         @Override
         public IWarrior next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
-            } else {
-                champion = iterator.next();
-                return champion;
+            }
+            else {
+                nextAlive=iterator.next();
+                    return nextAlive;
             }
         }
     }
-
+    public void removeDeadWarriors(){
+        troops.removeIf(IWarrior-> IWarrior.isAlive()==false);
+    }
+    public Iterator<IWarrior> firstAliveIterator() {
+        return new FirAliveIterator();
+    }
 
     class FirAliveIterator implements Iterator<IWarrior> {
         Iterator<IWarrior> iterator = troops.iterator();

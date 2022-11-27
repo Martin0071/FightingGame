@@ -341,13 +341,23 @@ class BattleTest {
         army1.addUnits(Healer::new,1);
         army2.addUnits(Warrior::new,2);
         army2.addUnits(Healer::new,1);
-        assertTrue(Battle.fight(army1,army2));
+        assertFalse(Battle.fight(army1,army2));
     }
     @Test
     void customBattle2(){
-        army1.addUnits(Rookie::new,2);
-        army2.addUnits(Lancer::new,1);
-        assertFalse(Battle.fight(army1,army2));
+
+        var army5 = new Army();
+        army5.addUnits(Warrior::new, 10);
+        var army6 = new Army();
+        army6.addUnits(Warrior::new, 6);
+        army6.addUnits(Lancer::new, 5);
+        assertFalse(Battle.straightFight(army5,army6));
+    }
+    @Test
+    void customBattle3(){
+        army1.addUnits(Lancer::new,2);
+        army2.addUnits(Warrior::new,2);
+        assertTrue(Battle.straightFight(army1,army2));
     }
     @Test
     void battleBetweenLancerAndWarrior(){

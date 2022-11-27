@@ -39,9 +39,20 @@ public class Battle {
         return firstArmyIterator.hasNext();
     }
     public static boolean straightFight(Army army1, Army army2){
-        //TODO
-        //Implement iterator for getting aliveWarriors
-        //Implement logic for straightFight
-        return false;
+        while(true){
+            army1.removeDeadWarriors();
+            army2.removeDeadWarriors();
+            var army1AliveIterator = army1.iterator();
+            var army2AliveIterator = army2.iterator();
+            if(!army1AliveIterator.hasNext()) {
+                return false;
+            }
+            if(!army2AliveIterator.hasNext()) {
+                return true;
+            }
+            while(army1AliveIterator.hasNext() && army2AliveIterator.hasNext()){
+                fight(army1AliveIterator.next(),army2AliveIterator.next());
+            }
+        }
     }
 }
