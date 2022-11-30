@@ -1,6 +1,7 @@
 package org.example.characters;
 
 
+import org.example.weapons.Weapon;
 
 public interface IWarrior {
    default void hit(IWarrior opponent){
@@ -15,4 +16,5 @@ public interface IWarrior {
     }
     void receiveDamage(int attack);
     void heal(int healAmount);
+    void equipWeapon(Weapon weapon);
 }

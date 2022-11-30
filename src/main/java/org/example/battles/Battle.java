@@ -40,8 +40,7 @@ public class Battle {
     }
     public static boolean straightFight(Army army1, Army army2){
         while(true){
-            army1.removeDeadWarriors();
-            army2.removeDeadWarriors();
+
             var army1AliveIterator = army1.iterator();
             var army2AliveIterator = army2.iterator();
             if(!army1AliveIterator.hasNext()) {

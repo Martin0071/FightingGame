@@ -2,6 +2,7 @@ package org.example.characters;
 
 import org.example.armies.Army;
 import org.example.battles.Battle;
+import org.example.weapons.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,19 +32,6 @@ class BattleTest {
         army1 = new Army();
         army2 = new Army();
     }
-    /*interface Warrior{
-
-    }
-    interface Defender{
-
-    }
-    interface Vampire extends Warrior,Defender{
-
-    }
-    class WarriorImp implements Warrior{
-
-    }*/
-
     @Test
     void firstFight() {
         assertFalse(Battle.fight(carl, jim));
@@ -364,5 +352,194 @@ class BattleTest {
         Lancer lancer = new Lancer();
         Warrior warrior = new Warrior();
         assertTrue(Battle.fight(lancer,warrior));
+    }
+    @Test
+    @DisplayName("1. ")
+    void one() {
+        Warrior warrior = new Warrior();
+        warrior.equipWeapon(new Sword());
+
+        Warrior vampire = new Vampire();
+        vampire.equipWeapon(new MagicWand());
+
+        assertFalse(Battle.fight(warrior, vampire));
+    }
+
+    @Test
+    @DisplayName("2. ")
+    void two() {
+        Warrior warrior1 = new Defender();
+        warrior1.equipWeapon(new Shield());
+
+        Warrior warrior2 = new Lancer();
+        warrior2.equipWeapon(new GreatAxe());
+
+        assertFalse(Battle.fight(warrior1, warrior2));
+    }
+
+    @Test
+    @DisplayName("3. ")
+    void three() {
+        Warrior warrior1 = new Healer();
+        warrior1.equipWeapon(new MagicWand());
+
+        Warrior warrior2 = new Knight();
+        warrior2.equipWeapon(new Katana());
+
+        assertFalse(Battle.fight(warrior1, warrior2));
+    }
+
+    @Test
+    @DisplayName("4. ")
+    void four() {
+        Warrior warrior1 = new Defender();
+        warrior1.equipWeapon(new Shield());
+        warrior1.equipWeapon(new MagicWand());
+
+        Warrior warrior2 = new Vampire();
+        warrior1.equipWeapon(new Shield());
+        warrior2.equipWeapon(new Katana());
+
+        assertFalse(Battle.fight(warrior1, warrior2));
+    }
+
+    @Test
+    @DisplayName("5. ")
+    void five() {
+        Weapon weapon_1 = new MagicWand();
+        Weapon weapon_2 = new GreatAxe();
+
+        Army myArmy = new Army();
+        myArmy.addUnits(Knight::new, 1);
+        myArmy.addUnits(Lancer::new, 1);
+
+        Army enemyArmy = new Army();
+        enemyArmy.addUnits(Vampire::new, 1);
+        enemyArmy.addUnits(Healer::new, 1);
+
+        myArmy.equipWarriorAtPosition(0, weapon_1);
+        myArmy.equipWarriorAtPosition(1, weapon_2);
+
+        enemyArmy.equipWarriorAtPosition(0, weapon_1);
+        enemyArmy.equipWarriorAtPosition(1, weapon_2);
+
+        assertTrue(Battle.fight(myArmy, enemyArmy));
+    }
+
+    @Test
+    @DisplayName("6. ")
+    void six() {
+        Weapon weapon_1 = new Sword();
+        Weapon weapon_2 = new GreatAxe();
+
+        Army myArmy = new Army();
+        myArmy.addUnits(Defender::new, 1);
+        myArmy.addUnits(Warrior::new, 1);
+
+        Army enemyArmy = new Army();
+        enemyArmy.addUnits(Knight::new, 1);
+        enemyArmy.addUnits(Healer::new, 1);
+
+        myArmy.equipWarriorAtPosition(0, weapon_2);
+        myArmy.equipWarriorAtPosition(1, weapon_2);
+
+        enemyArmy.equipWarriorAtPosition(0, weapon_1);
+        enemyArmy.equipWarriorAtPosition(1, weapon_2);
+
+        assertTrue(Battle.fight(myArmy, enemyArmy));
+    }
+
+    @Test
+    @DisplayName("7. ")
+    void seven() {
+        Weapon weapon_1 = new Katana();
+        Weapon weapon_2 = new Shield();
+
+        Army myArmy = new Army();
+        myArmy.addUnits(Defender::new, 2);
+
+        Army enemyArmy = new Army();
+        enemyArmy.addUnits(Knight::new, 1);
+        enemyArmy.addUnits(Vampire::new, 1);
+
+        myArmy.equipWarriorAtPosition(0, weapon_1);
+        myArmy.equipWarriorAtPosition(1, weapon_1);
+
+        enemyArmy.equipWarriorAtPosition(0, weapon_1);
+        enemyArmy.equipWarriorAtPosition(1, weapon_1);
+
+        assertFalse(Battle.fight(myArmy, enemyArmy));
+    }
+
+
+    @Test
+    @DisplayName("10. ")
+    void ten() {
+        Weapon weapon_1 = new Katana();
+        Weapon weapon_2 = new Shield();
+
+        Army myArmy = new Army();
+        myArmy.addUnits(Vampire::new, 2);
+        myArmy.addUnits(Rookie::new, 2);
+
+        Army enemyArmy = new Army();
+        enemyArmy.addUnits(Warrior::new, 1);
+        enemyArmy.addUnits(Defender::new, 2);
+
+        myArmy.equipWarriorAtPosition(0, weapon_1);
+        myArmy.equipWarriorAtPosition(1, weapon_1);
+        myArmy.equipWarriorAtPosition(2, weapon_2);
+
+        enemyArmy.equipWarriorAtPosition(0, weapon_1);
+        enemyArmy.equipWarriorAtPosition(1, weapon_2);
+        enemyArmy.equipWarriorAtPosition(2, weapon_2);
+
+        assertTrue(Battle.fight(myArmy, enemyArmy));
+    }
+
+    @Test
+    @DisplayName("11. ")
+    void eleven() {
+        Weapon weapon_1 = new Sword();
+        Weapon weapon_2 = new GreatAxe();
+
+        Army myArmy = new Army();
+        myArmy.addUnits(Vampire::new, 3);
+
+        Army enemyArmy = new Army();
+        enemyArmy.addUnits(Warrior::new, 1);
+        enemyArmy.addUnits(Defender::new, 1);
+
+        myArmy.equipWarriorAtPosition(0, weapon_2);
+        myArmy.equipWarriorAtPosition(1, weapon_2);
+        myArmy.equipWarriorAtPosition(2, weapon_2);
+
+        enemyArmy.equipWarriorAtPosition(0, weapon_1);
+        enemyArmy.equipWarriorAtPosition(1, weapon_1);
+
+        assertTrue(Battle.fight(myArmy, enemyArmy));
+    }
+
+    @Test
+    @DisplayName("12. ")
+    void twelve() {
+        Weapon weapon_1 = new Katana();
+        Weapon weapon_2 = new MagicWand();
+
+        Army myArmy = new Army();
+        myArmy.addUnits(Rookie::new, 3);
+
+        Army enemyArmy = new Army();
+        enemyArmy.addUnits(Defender::new, 1);
+        enemyArmy.addUnits(Healer::new, 1);
+
+        myArmy.equipWarriorAtPosition(0, weapon_1);
+        myArmy.equipWarriorAtPosition(1, weapon_1);
+        myArmy.equipWarriorAtPosition(2, weapon_1);
+
+        enemyArmy.equipWarriorAtPosition(0, weapon_2);
+        enemyArmy.equipWarriorAtPosition(1, weapon_2);
+
+        assertFalse(Battle.fight(myArmy, enemyArmy));
     }
 }

@@ -1,8 +1,15 @@
 package org.example.characters;
 
+import org.example.weapons.Weapon;
+
 public class Warrior implements IWarrior {
     private int health;
-    private final int attack;
+    private int attack;
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
     int initialHealth;
 
     public Warrior() {
@@ -16,15 +23,15 @@ public class Warrior implements IWarrior {
     public void receiveDamage(int attack) {
         setHealth(getHealth() - attack);
     }
+    @Override
+    public void equipWeapon(Weapon weapon){
+    setHealth(getHealth() + weapon.getHealth());
+    setAttack(getAttack()+ weapon.getAttack());
+    }
 
     @Override
     public void heal(int healAmount) {
-        if(getHealth()<initialHealth){
-            setHealth(getHealth()+healAmount);
-            if(getHealth()>initialHealth){
-                setHealth(initialHealth);
-            }
-        }
+        setHealth(Math.min(initialHealth,getHealth()+healAmount));
     }
 
     public int getHealth() {

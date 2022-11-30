@@ -1,7 +1,13 @@
 package org.example.characters;
 
+import org.example.weapons.Weapon;
+
 public class Defender extends Warrior {
-    private static final int DEFENSE = 2;
+    private int defense = 2;
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
 
     public Defender() {
         super(60, 3);
@@ -16,8 +22,14 @@ public class Defender extends Warrior {
         super.receiveDamage(receivedDamage);
     }
 
+    @Override
+    public void equipWeapon(Weapon weapon) {
+        super.equipWeapon(weapon);
+        setDefense(Math.max(0,getDefense()+ weapon.getDefense()));
+    }
+
     public int getDefense() {
-        return DEFENSE;
+        return defense;
     }
 
     @Override

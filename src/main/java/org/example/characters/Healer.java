@@ -4,12 +4,17 @@ import org.example.armies.Army;
 import org.example.services.CanProcessCommand;
 import org.example.services.ChampionHitCommand;
 import org.example.services.Command;
+import org.example.weapons.Weapon;
 
 public class Healer extends Warrior implements IWarrior, CanProcessCommand {
-    private static final int HEALING_POWER = 2;
+    private int healingPower = 2;
 
-    public static int getHealingPower() {
-        return HEALING_POWER;
+    public void setHealingPower(int healingPower) {
+        this.healingPower = healingPower;
+    }
+
+    public int getHealingPower() {
+        return healingPower;
     }
 
     public Healer() {
@@ -22,12 +27,17 @@ public class Healer extends Warrior implements IWarrior, CanProcessCommand {
     }
 
     public void heal(IWarrior patient) {
-            if(patient instanceof Army.WarriorInArmy){
-                Warrior unwrappedWarrior = ((Army.WarriorInArmy) patient).unwrapped();
+            if(patient instanceof Army.WarriorInArmy warriorInArmy){
+                Warrior unwrappedWarrior = warriorInArmy.unwrapped();
                 unwrappedWarrior.heal(getHealingPower());
 
             }
 
+    }
+    @Override
+    public void equipWeapon(Weapon weapon) {
+        super.equipWeapon(weapon);
+        setHealingPower(Math.max(0,getHealingPower()+weapon.getHealPower()));
     }
 
     @Override
