@@ -3,7 +3,7 @@ package org.example.characters;
 import org.example.weapons.Weapon;
 
 public class Defender extends Warrior {
-    private int defense = 2;
+    private int defense;
 
     public void setDefense(int defense) {
         this.defense = defense;
@@ -11,6 +11,11 @@ public class Defender extends Warrior {
 
     public Defender() {
         super(60, 3);
+        this.defense=2;
+    }
+    public Defender(int health, int attack, int defense){
+        super(health,attack);
+        this.defense=defense;
     }
 
     @Override

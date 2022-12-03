@@ -27,7 +27,6 @@ class WeaponTest {
 
         Battle.fight(warrior1,warrior2);
         var test = warrior1.isAlive();
-
         //then
         assertEquals(expected,test);
     }

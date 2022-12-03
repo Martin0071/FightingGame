@@ -3,19 +3,27 @@ package org.example.characters;
 import org.example.weapons.Weapon;
 
 public class Vampire extends Warrior {
-    private int vampirism = 50;
+    /**
+     * Character with the vampirism trait
+     *
+     * @param vampirism
+     */
+    private int vampirism;
 
     public int getVampirism() {
         return vampirism;
     }
 
-    public void setVampirism(int vampirism) {
+    private void setVampirism(int vampirism) {
         this.vampirism = vampirism;
     }
 
+
     public Vampire() {
         super(40, 4);
+        this.vampirism = 50;
     }
+
     @Override
     public void equipWeapon(Weapon weapon) {
         super.equipWeapon(weapon);

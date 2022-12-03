@@ -60,6 +60,7 @@ public class Army implements Iterable<IWarrior>{
 
         @Override
         public void heal(int healAmount) {
+            //nothing
         }
 
         @Override

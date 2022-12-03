@@ -364,7 +364,17 @@ class BattleTest {
 
         assertFalse(Battle.fight(warrior, vampire));
     }
-
+    @Test
+    @DisplayName("Magician")
+    void magic(){
+        Army army1 = new Army();
+        Army army2 = new Army();
+        army1.addUnits(Warrior::new,1);
+        army1.addUnits(Magician::new,1);
+        army2.addUnits(Knight::new,1);
+        army2.addUnits(Magician::new,1);
+        Battle.fight(army1,army2);
+    }
     @Test
     @DisplayName("2. ")
     void two() {
